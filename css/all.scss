@@ -1,0 +1,254 @@
+
+/***  Includes  ***/
+//***********************************************
+@import "reset";
+@import "layout";
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+/***  Variables   ***/
+//***********************************************
+  // fonts
+  $montserrat : 'Montserrat', sans-serif;
+  $themeGray : #a0a0a0;
+  $copyColor : #333;
+  $linkBlue : #65c4e3;
+
+/***  Mixins   ***/
+//***********************************************
+@mixin transition($property, $time) {
+  -o-transition: $property $time ease;
+  -ms-transition: $property $time ease;
+  -moz-transition: $property $time ease;
+  -webkit-transition: $property $time ease;
+  transition: $property $time ease;
+}
+@mixin border-radius($borders){
+  -webkit-border-radius: $borders;
+  -moz-border-radius: $borders;
+  border-radius: $borders;
+}
+@mixin box-shadow($dimensions, $color) {
+  -webkit-box-shadow: $dimensions $color;
+  -moz-box-shadow:    $dimensions $color;
+  box-shadow:         $dimensions $color;
+}
+
+// MAIN
+
+body {
+  font-family: $montserrat;
+}
+
+// Navigation
+#navigation {
+  background: #000;
+    #logo {
+      display: block;
+      float: left;
+      padding-top: 20px;
+    }
+    nav {
+      float: right;
+        li {
+          font-weight: bold;
+          float: left;
+          margin-left: 33px;
+          font : {
+            size: 12px;
+            weight: bold;
+          }
+          line-height: 54px;
+          letter-spacing: .02em;
+          text-transform: uppercase;
+            &:last-child > a:after {
+              content:'\2192';
+            }
+            a {
+              color: $themeGray;
+              @include transition(all,0.3s);
+              text-decoration: none;
+                &:hover {
+                  color: #fff;
+                }
+            }
+        }
+        .active {
+          color: #fff;
+        }
+    }
+}
+
+// Hero Section
+#hero {
+  background: url(../images/hero-bg.jpg) 0 0;
+  padding: 115px 0 140px;
+    hgroup {
+      text-align: center;
+      color: #fff;
+        h1 {
+          font-size: 52px;
+          line-height: 54px;
+          padding: 0 0 50px;
+        }
+        h2 {
+          font-size: 24px;
+          line-height: 36px;
+          padding-bottom: 75px;
+        }
+    }
+}
+
+// Buckets
+.bucket-display {
+  background: #f4f4f5;
+    .container {
+     padding: 0 -12px;
+    }
+}
+.bucket {
+  float: left;
+    .bucket-wrap {
+      margin: 0 12px;
+      @include border-radius(5px);
+      @include box-shadow(0px 0px 5px 0px, rgba(0, 0, 0, 0.1));
+      padding-bottom: 25px;
+      overflow: hidden;
+      background: #fff;
+      margin-bottom: 85px;
+      margin-top: -50px;
+        figure {
+          position: relative;
+            figcaption {
+              position: absolute;
+              top: 50%;
+              text-align: center;
+              font : {
+                weight: bold;
+                size: 36px;
+              }
+              line-height: 1;
+              color: #fff;
+              left: 0;
+              right: 0;
+              margin-top: -18px;
+            }
+            .app-type {
+              position: absolute;
+              bottom: 30px;
+              left: -5px;
+              background: url(../images/app-type-bg.png) no-repeat;
+              padding: 0 25px 0 15px;
+              font : {
+                weight: bold;
+                size: 14px;
+              }
+              line-height: 30px;
+              text-transform: uppercase;
+              color: #fff;
+              opacity: .4;
+            }
+        }
+        p {
+          color: $copyColor;
+          font-size: 16px;
+          line-height: 22px;
+          padding: 30px 30px 0;
+        }
+      .github-link {
+          padding: 0 30px;
+            a {
+              background: url(../images/github-icon.png)no-repeat 0 0;
+              padding-left: 50px;
+              color: $linkBlue;
+              text-decoration: none;
+              font-size: 16px;
+              line-height: 60px;
+            }
+        }
+    }
+  .empty-bucket {
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+      h4 {
+        padding: 40px 0 30px;
+        color: $copyColor;
+        font-size: 24px;
+        text-align: center;
+      }
+      p {
+         font-size: 16px;
+         color: $copyColor;
+         line-height: 22px;
+       }
+      a {
+        color: $linkBlue;
+        text-decoration: none;
+      }
+  }
+
+}
+
+
+
+
+// MEDIA QUERIES
+@media all and (max-width: 767px) {
+  .container {
+    width: 320px;
+  }
+  .col-12,.col-11,.col-10,.col-9,.col-8,.col-7,.col-6,.col-5,.col-4,.col-3,.col-2,.col-1 {
+    width: 100%;
+  }
+  #navigation nav {
+    padding-right: 50px;
+  }
+  #logo {
+    padding-left: 100px;
+  }
+  // Hero Section
+  #hero {
+    padding: 45px 0 140px;
+    hgroup {
+
+      h1 {
+        font-size: 24px;
+        line-height: 27px;
+        padding: 0 0 30px;
+      }
+      h2 {
+        font-size: 14px;
+        line-height: 18px;
+        padding-bottom: 75px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1004px) and (min-width: 768px) {
+  .container {
+    width: 767px;
+  }
+  .col-4 {
+    width: 50%;
+  }
+  #hero {
+    padding: 45px 0 140px;
+    hgroup {
+
+      h1 {
+        font-size: 44px;
+        line-height: 50px;
+        padding: 0 0 30px;
+      }
+      h2 {
+        font-size: 18px;
+        line-height: 30px;
+        padding-bottom: 75px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,297 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+/***  Includes  ***/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0b1 | 201101
+   NOTE: WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* remember to define visible focus styles!
+:focus {
+	outline: ?????;
+} */
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none; }
+
+del {
+  text-decoration: line-through; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.clearfix {
+  *zoom: 1; }
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  line-height: 0;
+  content: ""; }
+
+.clearfix:after {
+  clear: both; }
+
+.container {
+  max-width: 1134px;
+  margin: 0 auto; }
+
+.centered {
+  margin: 0 auto;
+  display: block; }
+
+.row {
+  margin: 0 -12px; }
+
+.responsive-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto; }
+
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
+  position: relative;
+  min-height: 1px; }
+
+.col-12 {
+  width: 100%; }
+
+.col-11 {
+  width: 91.66666667%; }
+
+.col-10 {
+  width: 83.33333333%; }
+
+.col-9 {
+  width: 75%; }
+
+.col-8 {
+  width: 66.66666667%; }
+
+.col-7 {
+  width: 58.33333333%; }
+
+.col-6 {
+  width: 50%; }
+
+.col-5 {
+  width: 41.66666667%; }
+
+.col-4 {
+  width: 33.33333333%; }
+
+.col-3 {
+  width: 25%; }
+
+.col-2 {
+  width: 16.66666667%; }
+
+.col-1 {
+  width: 8.33333333%; }
+
+/***  Variables   ***/
+/***  Mixins   ***/
+body {
+  font-family: "Montserrat", sans-serif; }
+
+#navigation {
+  background: #000; }
+  #navigation #logo {
+    display: block;
+    float: left;
+    padding-top: 20px; }
+  #navigation nav {
+    float: right; }
+    #navigation nav li {
+      font-weight: bold;
+      float: left;
+      margin-left: 33px;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 54px;
+      letter-spacing: .02em;
+      text-transform: uppercase; }
+      #navigation nav li:last-child > a:after {
+        content: '\2192'; }
+      #navigation nav li a {
+        color: #a0a0a0;
+        -o-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        text-decoration: none; }
+        #navigation nav li a:hover {
+          color: #fff; }
+    #navigation nav .active {
+      color: #fff; }
+
+#hero {
+  background: url(../images/hero-bg.jpg) 0 0;
+  padding: 115px 0 140px; }
+  #hero hgroup {
+    text-align: center;
+    color: #fff; }
+    #hero hgroup h1 {
+      font-size: 52px;
+      line-height: 54px;
+      padding: 0 0 50px; }
+    #hero hgroup h2 {
+      font-size: 24px;
+      line-height: 36px;
+      padding-bottom: 75px; }
+
+.bucket-display {
+  background: #f4f4f5; }
+  .bucket-display .container {
+    padding: 0 -12px; }
+
+.bucket {
+  float: left; }
+  .bucket .bucket-wrap {
+    margin: 0 12px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    padding-bottom: 25px;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 85px;
+    margin-top: -50px; }
+    .bucket .bucket-wrap figure {
+      position: relative; }
+      .bucket .bucket-wrap figure figcaption {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 1;
+        color: #fff;
+        left: 0;
+        right: 0;
+        margin-top: -18px; }
+      .bucket .bucket-wrap figure .app-type {
+        position: absolute;
+        bottom: 30px;
+        left: -5px;
+        background: url(../images/app-type-bg.png) no-repeat;
+        padding: 0 25px 0 15px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: #fff;
+        opacity: .4; }
+    .bucket .bucket-wrap p {
+      color: #333333;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 30px 30px 0; }
+    .bucket .bucket-wrap .github-link {
+      padding: 0 30px; }
+      .bucket .bucket-wrap .github-link a {
+        background: url(../images/github-icon.png) no-repeat 0 0;
+        padding-left: 50px;
+        color: #65c4e3;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 60px; }
+  .bucket .empty-bucket {
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+    .bucket .empty-bucket h4 {
+      padding: 40px 0 30px;
+      color: #333333;
+      font-size: 24px;
+      text-align: center; }
+    .bucket .empty-bucket p {
+      font-size: 16px;
+      color: #333333;
+      line-height: 22px; }
+    .bucket .empty-bucket a {
+      color: #65c4e3;
+      text-decoration: none; }
+
+@media all and (max-width: 767px) {
+  .container {
+    width: 320px; }
+
+  .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
+    width: 100%; }
+
+  #navigation nav {
+    padding-right: 50px; }
+
+  #logo {
+    padding-left: 100px; }
+
+  #hero {
+    padding: 45px 0 140px; }
+    #hero hgroup h1 {
+      font-size: 24px;
+      line-height: 27px;
+      padding: 0 0 30px; }
+    #hero hgroup h2 {
+      font-size: 14px;
+      line-height: 18px;
+      padding-bottom: 75px; } }
+@media all and (max-width: 1004px) and (min-width: 768px) {
+  .container {
+    width: 767px; }
+
+  .col-4 {
+    width: 50%; }
+
+  #hero {
+    padding: 45px 0 140px; }
+    #hero hgroup h1 {
+      font-size: 44px;
+      line-height: 50px;
+      padding: 0 0 30px; }
+    #hero hgroup h2 {
+      font-size: 18px;
+      line-height: 30px;
+      padding-bottom: 75px; } }
